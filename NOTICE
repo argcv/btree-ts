@@ -1,0 +1,15 @@
+@argcv/btree
+============
+
+This package is a TypeScript modification of google/btree:
+
+https://github.com/google/btree
+
+The original google/btree source is licensed under the Apache License,
+Version 2.0. Original copyright notices in the source include:
+
+Copyright 2014 Google Inc.
+Copyright 2014-2022 Google Inc.
+
+The TypeScript modifications are distributed under the same Apache License,
+Version 2.0. See LICENSE and the applicable source-file headers.

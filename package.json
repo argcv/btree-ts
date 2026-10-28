@@ -1,0 +1,61 @@
+{
+  "name": "@argcv/btree",
+  "version": "0.0.2",
+  "description": "A typed, dependency-free B-tree for TypeScript and JavaScript with lazy copy-on-write cloning.",
+  "keywords": [
+    "btree",
+    "b-tree",
+    "typescript",
+    "ordered-collection",
+    "copy-on-write"
+  ],
+  "license": "Apache-2.0",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "NOTICE"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:bench": "npm run build && node --test benchmarks/*.test.mjs",
+    "check": "npm run typecheck && npm run test && npm run test:bench",
+    "prepack": "npm run check",
+    "bench": "npm run build && node benchmarks/run.mjs",
+    "bench:smoke": "npm run build && node benchmarks/run.mjs --smoke"
+  },
+  "devDependencies": {
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/argcv/btree-ts.git"
+  }
+}
